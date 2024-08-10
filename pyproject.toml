@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "no-pyide"
+version = "0.0.1"
+authors = [
+  { name="Simon Vedaa", email="simvedaa@gmail.com"},
+]
+description = "A barebones web code editor for python."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi[standard]"
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/simsam8/no-pyide"
+Issues = "https://github.com/simsam8/no-pyide/issues"
