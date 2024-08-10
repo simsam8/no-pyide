@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code run</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nord.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/code-input.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/code-input.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/plugins/indent.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.2/plugins/auto-close-brackets.min.js"></script>
+  <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+  <script>
+    codeInput.registerTemplate("syntax-highlighted", codeInput.templates.hljs(hljs, [
+      new codeInput.plugins.Indent(true, 4),
+      new codeInput.plugins.AutoCloseBrackets(),
+    ] /* Array of plugins (see below) */));
+  </script>
+</head>
+
+<body>
+  <div class="flex one">
+    <h1 class="center off-fifth three-fifth">Simple Python Code Editor</h1>
+    <div class="flex two center off-fifth three-fifth">
+      <article class="card">
+        <form hx-post="/run" hx-swap="innerHTML" hx-target="#result">
+          <code-input language="python" name="code_str" 
+            style="--padding: 0px; border: 6px solid; border-color: #2e3440; border-radius: 4px;"></code-input>
+          <button type="submit">Run</button>
+        </form>
+      </article>
+
+      <article id="result" class="card">
+      </article>
+
+    </div>
+  </div>
+</body>
+
+</html>

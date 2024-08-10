@@ -1,0 +1,8 @@
+{% if success %}
+<header style="background-color: #a3be8c;">
+  {% else %}
+  <header style="background-color: #bf616a;">
+    {% endif %}
+    <h4 style="white-space: pre-wrap; color: #eceff4;">{{ message }}</h3>
+  </header>
+  <p style="white-space: pre-wrap;">{{ output }}</p>
