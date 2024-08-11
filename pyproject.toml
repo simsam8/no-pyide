@@ -1,13 +1,13 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools.package-data]
+"*" = ["*.html"]
 
 [project]
-name = "no-pyide"
-version = "0.0.1"
+name = "no_pyide"
+version = "0.0.0"
 authors = [
   { name="Simon Vedaa", email="simvedaa@gmail.com"},
 ]
@@ -15,7 +15,7 @@ description = "A barebones web code editor for python."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-  "fastapi[standard]"
+  "fastapi[standard]",
 ]
 classifiers = [
   "Programming Language :: Python :: 3",
@@ -26,3 +26,6 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/simsam8/no-pyide"
 Issues = "https://github.com/simsam8/no-pyide/issues"
+
+[project.scripts]
+pyide_run = "no_pyide.code:main"
