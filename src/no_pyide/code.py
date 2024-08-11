@@ -44,5 +44,10 @@ async def run(request: Request, code_str: str = Form()):
         request=request, name="results.html", context=result
     )
 
+
+def main():
+    uvicorn.run("no_pyide.code:app", host="127.0.0.1", port=8000, reload=False)
+
+
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=False)
+    main()
